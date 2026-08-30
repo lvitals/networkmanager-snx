@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SnxAdvancedWidget</class>
+ <widget class="QDialog" name="SnxAdvancedWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Advanced Settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <item>
+    <widget class="QTabWidget" name="tabs">
+     <widget class="QWidget" name="generalTab">
+      <attribute name="title">
+       <string>General</string>
+      </attribute>
+      <layout class="QFormLayout" name="generalTabLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="ifNameLabel">
+         <property name="text">
+          <string>Interface name:</string>
+         </property>
+         <property name="buddy">
+          <cstring>ifName</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="ifName"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="mtuLabel">
+         <property name="text">
+          <string>MTU:</string>
+         </property>
+         <property name="buddy">
+          <cstring>mtu</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="mtu">
+         <property name="minimum">
+          <number>576</number>
+         </property>
+         <property name="maximum">
+          <number>9000</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="dnsTab">
+      <attribute name="title">
+       <string>DNS</string>
+      </attribute>
+      <layout class="QFormLayout" name="dnsTabLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="dnsServersLabel">
+         <property name="text">
+          <string>Additional DNS servers:</string>
+         </property>
+         <property name="buddy">
+          <cstring>dnsServers</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="dnsServers"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="ignoreDnsServersLabel">
+         <property name="text">
+          <string>Ignored DNS servers:</string>
+         </property>
+         <property name="buddy">
+          <cstring>ignoreDnsServers</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="ignoreDnsServers"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="searchDomainsLabel">
+         <property name="text">
+          <string>Search domains:</string>
+         </property>
+         <property name="buddy">
+          <cstring>searchDomains</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="searchDomains"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ignoreSearchDomainsLabel">
+         <property name="text">
+          <string>Ignored search domains:</string>
+         </property>
+         <property name="buddy">
+          <cstring>ignoreSearchDomains</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="ignoreSearchDomains"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QCheckBox" name="setRoutingDomains">
+         <property name="text">
+          <string>Use routing domains for split DNS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="dnsPriorityLabel">
+         <property name="text">
+          <string>DNS priority:</string>
+         </property>
+         <property name="buddy">
+          <cstring>dnsPriority</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QSpinBox" name="dnsPriority">
+         <property name="minimum">
+          <number>-1000</number>
+         </property>
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="disableIpv6">
+         <property name="text">
+          <string>Disable IPv6 while connected</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="routingTab">
+      <attribute name="title">
+       <string>Routing</string>
+      </attribute>
+      <layout class="QFormLayout" name="routingTabLayout">
+       <item row="0" column="1">
+        <widget class="QCheckBox" name="defaultRoute">
+         <property name="text">
+          <string>Use as default route</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="noRouting">
+         <property name="text">
+          <string>Ignore routes received from the gateway</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="addRoutesLabel">
+         <property name="text">
+          <string>Additional routes:</string>
+         </property>
+         <property name="buddy">
+          <cstring>addRoutes</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="addRoutes"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ignoreRoutesLabel">
+         <property name="text">
+          <string>Ignored routes:</string>
+         </property>
+         <property name="buddy">
+          <cstring>ignoreRoutes</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="ignoreRoutes"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QCheckBox" name="allowForwarding">
+         <property name="text">
+          <string>Allow forwarding</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="certTab">
+      <attribute name="title">
+       <string>Certificate</string>
+      </attribute>
+      <layout class="QFormLayout" name="certTabLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="caCertLabel">
+         <property name="text">
+          <string>CA certificate path:</string>
+         </property>
+         <property name="buddy">
+          <cstring>caCert</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="caCertRow">
+         <item>
+          <widget class="QLineEdit" name="caCert"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="caCertBrowse">
+           <property name="text">
+            <string>Browse...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="ignoreServerCert">
+         <property name="toolTip">
+          <string>Skip TLS certificate validation for the gateway. Insecure: only use this for gateways with self-signed certificates you already trust.</string>
+         </property>
+         <property name="text">
+          <string>Ignore server certificate (insecure)</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="sessionTab">
+      <attribute name="title">
+       <string>Session</string>
+      </attribute>
+      <layout class="QFormLayout" name="sessionTabLayout">
+       <item row="0" column="1">
+        <widget class="QCheckBox" name="noKeepalive">
+         <property name="text">
+          <string>Disable IPsec keepalive</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="portKnock">
+         <property name="text">
+          <string>NAT-T port knock</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="ikePersist">
+         <property name="text">
+          <string>Persist IKE session</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ikeLifetimeLabel">
+         <property name="text">
+          <string>IKE lifetime (seconds):</string>
+         </property>
+         <property name="buddy">
+          <cstring>ikeLifetime</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QSpinBox" name="ikeLifetime">
+         <property name="maximum">
+          <number>604800</number>
+         </property>
+         <property name="singleStep">
+          <number>60</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="ipLeaseTimeLabel">
+         <property name="text">
+          <string>IP lease time (seconds):</string>
+         </property>
+         <property name="buddy">
+          <cstring>ipLeaseTime</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QSpinBox" name="ipLeaseTime">
+         <property name="maximum">
+          <number>604800</number>
+         </property>
+         <property name="singleStep">
+          <number>60</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SnxAdvancedWidget</receiver>
+   <slot>accept()</slot>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SnxAdvancedWidget</receiver>
+   <slot>reject()</slot>
+  </connection>
+ </connections>
+</ui>

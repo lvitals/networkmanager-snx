@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SnxWidget</class>
+ <widget class="QWidget" name="SnxWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>460</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="outerLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <widget class="QWidget" name="scrollAreaContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>460</width>
+        <height>420</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="topLayout">
+       <property name="rightMargin">
+        <number>16</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="generalGroup">
+     <property name="title">
+      <string>General</string>
+     </property>
+     <layout class="QFormLayout" name="generalLayout">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="gatewayLabel">
+        <property name="text">
+         <string>Gateway address:</string>
+        </property>
+        <property name="buddy">
+         <cstring>gateway</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QHBoxLayout" name="gatewayRow">
+        <item>
+         <widget class="QLineEdit" name="gateway"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="queryButton">
+          <property name="toolTip">
+           <string>Fetch the gateway's real login methods (read-only, no credentials sent) and choose the login type</string>
+          </property>
+          <property name="text">
+           <string>Query...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="loginTypeLabel">
+        <property name="text">
+         <string>Login type:</string>
+        </property>
+        <property name="buddy">
+         <cstring>loginType</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="loginType">
+        <property name="toolTip">
+         <string>Use the "Query..." button next to Gateway address to load the real login methods from the server.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="tunnelTypeLabel">
+        <property name="text">
+         <string>Tunnel type:</string>
+        </property>
+        <property name="buddy">
+         <cstring>tunnelType</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="tunnelType"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="transportTypeLabel">
+        <property name="text">
+         <string>IPsec transport:</string>
+        </property>
+        <property name="buddy">
+         <cstring>transportType</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="transportType"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="authGroup">
+     <property name="title">
+      <string>Authentication</string>
+     </property>
+     <layout class="QFormLayout" name="authLayout">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="userLabel">
+        <property name="text">
+         <string>User name:</string>
+        </property>
+        <property name="buddy">
+         <cstring>user</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="user"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="passwordLabel">
+        <property name="text">
+         <string>Password:</string>
+        </property>
+        <property name="buddy">
+         <cstring>password</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="PasswordField" name="password">
+        <property name="passwordModeEnabled" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="useCertificate">
+        <property name="text">
+         <string>Use a client certificate</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="certTypeLabel">
+        <property name="text">
+         <string>Certificate type:</string>
+        </property>
+        <property name="buddy">
+         <cstring>certType</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="certType"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="certPathLabel">
+        <property name="text">
+         <string>Certificate path:</string>
+        </property>
+        <property name="buddy">
+         <cstring>certPath</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <layout class="QHBoxLayout" name="certPathRow">
+        <item>
+         <widget class="QLineEdit" name="certPath"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="certPathBrowse">
+          <property name="text">
+           <string>Browse...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="certIdLabel">
+        <property name="text">
+         <string>Certificate/token ID:</string>
+        </property>
+        <property name="buddy">
+         <cstring>certId</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="certId"/>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="certPasswordLabel">
+        <property name="text">
+         <string>Certificate password:</string>
+        </property>
+        <property name="buddy">
+         <cstring>certPassword</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="PasswordField" name="certPassword">
+        <property name="passwordModeEnabled" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="advancedRow">
+     <item>
+      <spacer name="advancedSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="advancedButton">
+       <property name="text">
+        <string>Advanced...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

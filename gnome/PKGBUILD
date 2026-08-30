@@ -1,0 +1,40 @@
+# Maintainer: networkmanager-snx contributors
+#
+# GNOME/GTK flavor. Builds only the GTK NMVpnEditor plugin and auth dialog
+# (gnome/) on top of the core NetworkManager SNX backend, which lives in the
+# common networkmanager-snx package (../common/PKGBUILD) and is a runtime
+# dependency of this one. For KDE Plasma instead, see ../plasma/PKGBUILD -- the
+# two no longer conflict, since neither installs the shared backend files;
+# both can be installed at the same time on top of networkmanager-snx.
+
+pkgname=networkmanager-snx-gnome
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='NetworkManager VPN plugin for Check Point SNX/Remote Access (GNOME Settings GTK editor)'
+arch=('x86_64')
+url='https://github.com/lvitals/networkmanager-snx'
+license=('MIT')
+depends=('glib2' 'gtk4' 'libnma' 'networkmanager' 'networkmanager-snx')
+makedepends=('git' 'meson' 'ninja' 'pkgconf')
+checkdepends=('valgrind')
+source=('git+https://github.com/lvitals/networkmanager-snx.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd networkmanager-snx
+  git describe --long --tags --always | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  arch-meson networkmanager-snx/gnome build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 networkmanager-snx/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,14 @@
+[VPN Connection]
+name=Check Point SNX/Remote Access
+service=org.freedesktop.NetworkManager.snx
+program=/usr/lib/NetworkManager/nm-snx-service
+supports-multiple-connections=true
+supports-safe-private-file-access=true
+
+[libnm]
+plugin=/usr/lib/NetworkManager/libnm-vpn-plugin-snx.so
+
+[GNOME]
+auth-dialog=/usr/lib/NetworkManager/nm-snx-auth-dialog
+supports-external-ui-mode=true
+supports-hints=true

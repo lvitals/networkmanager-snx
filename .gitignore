@@ -1,0 +1,10 @@
+build/
+local/
+*.local
+*.secret
+*.nmconnection
+*.o
+*.a
+*.so
+*.swp
+*~

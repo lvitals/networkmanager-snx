@@ -1,0 +1,13 @@
+{
+    "KPlugin": {
+        "Category": "VPNService",
+        "Description": "Connect to Check Point SNX and Remote Access VPN gateways",
+        "EnabledByDefault": true,
+        "Icon": "network-vpn",
+        "License": "MIT",
+        "Name": "Check Point SNX/Remote Access",
+        "Version": "0.1",
+        "Website": "https://github.com/lvitals/networkmanager-snx"
+    },
+    "X-NetworkManager-Services": "org.freedesktop.NetworkManager.snx"
+}

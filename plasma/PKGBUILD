@@ -1,0 +1,39 @@
+# Maintainer: networkmanager-snx contributors
+#
+# KDE Plasma/Qt flavor. Builds only the plasma-nm editor plugin (no meson,
+# no GTK/libnma runtime dependency at all) -- the core NetworkManager SNX
+# backend (nm-snx-service, snx.name, D-Bus policy) lives in the common
+# networkmanager-snx package (../common/PKGBUILD), a runtime dependency of
+# this one. For GNOME instead, see ../gnome/PKGBUILD -- the two no longer
+# conflict, since neither installs the shared backend files; both can be
+# installed at the same time on top of networkmanager-snx.
+
+pkgname=networkmanager-snx-plasma
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='NetworkManager VPN plugin for Check Point SNX/Remote Access (KDE Plasma Qt editor, no GTK dependency)'
+arch=('x86_64')
+url='https://github.com/lvitals/networkmanager-snx'
+license=('MIT')
+depends=('glib2' 'networkmanager' 'qt6-base' 'kcoreaddons' 'kwidgetsaddons' 'networkmanager-qt' 'plasma-nm' 'networkmanager-snx')
+makedepends=('git' 'cmake' 'pkgconf')
+source=('git+https://github.com/lvitals/networkmanager-snx.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd networkmanager-snx
+  git describe --long --tags --always | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  cmake -S networkmanager-snx/plasma -B build \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None \
+    -Wno-dev
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 networkmanager-snx/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

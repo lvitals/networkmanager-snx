@@ -1,0 +1,43 @@
+# Maintainer: networkmanager-snx contributors
+#
+# Common backend package. Builds and installs the core NetworkManager SNX
+# D-Bus service (nm-snx-service), the CLI discovery tool (nm-snx-discover),
+# the snx.name VPN type registration, and the D-Bus policy -- all shared by
+# both desktop flavors. No GTK or Qt/KF dependency at all: installing
+# this package alone is enough to make the "snx" VPN type work with
+# nmcli/nmtui. Install ../gnome/PKGBUILD (networkmanager-snx-gnome) and/or
+# ../plasma/PKGBUILD (networkmanager-snx-plasma) on top for a desktop editor --
+# both depend on this package and no longer conflict with each other, since
+# neither installs the backend files this package owns.
+
+pkgname=networkmanager-snx
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='NetworkManager VPN plugin for Check Point SNX/Remote Access (core D-Bus service, no desktop editor)'
+arch=('x86_64')
+url='https://github.com/lvitals/networkmanager-snx'
+license=('MIT')
+depends=('glib2' 'networkmanager')
+makedepends=('git' 'meson' 'ninja' 'pkgconf')
+checkdepends=('valgrind')
+source=('git+https://github.com/lvitals/networkmanager-snx.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd networkmanager-snx
+  git describe --long --tags --always | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  arch-meson networkmanager-snx/common build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 networkmanager-snx/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
