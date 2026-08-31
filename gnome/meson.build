@@ -39,7 +39,8 @@ nm_libexecdir = join_paths(get_option('prefix'), libdir, 'NetworkManager')
 # which installs no shared library) purely to statically link into this
 # package's own two targets below. The D-Bus service, snx.name, and D-Bus
 # policy it also needs are provided by the networkmanager-snx package
-# (../common/PKGBUILD), a runtime dependency of this package -- see PKGBUILD.
+# (../packaging/arch/common/PKGBUILD), a runtime dependency of this package --
+# see ../packaging/arch/gnome/PKGBUILD.
 snx_core_sources = files(
   '../src/snx-errors.c',
   '../src/snx-config.c',

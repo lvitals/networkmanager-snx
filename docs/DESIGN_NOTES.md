@@ -41,4 +41,4 @@ Architecture and scope notes for this NetworkManager VPN plugin implementation o
 ## Packaging
 
 - The core NetworkManager service, discover helper, VPN descriptor, and D-Bus policy are built and installed by `common/meson.build` alone. The GTK editor plugin and auth dialog are built and installed separately by `gnome/meson.build`, on top of the core backend.
-- Arch packaging is split into three packages with no file overlap: `common/PKGBUILD` (`networkmanager-snx`, the core backend), `gnome/PKGBUILD` (`networkmanager-snx-gnome`, depends on `networkmanager-snx`), and `plasma/PKGBUILD` (`networkmanager-snx-plasma`, depends on `networkmanager-snx`). None of the three restart NetworkManager automatically from package hooks.
+- Arch packaging is split into three packages with no file overlap, all under `packaging/arch/`: `packaging/arch/common/PKGBUILD` (`networkmanager-snx`, the core backend), `packaging/arch/gnome/PKGBUILD` (`networkmanager-snx-gnome`, depends on `networkmanager-snx`), and `packaging/arch/plasma/PKGBUILD` (`networkmanager-snx-plasma`, depends on `networkmanager-snx`). None of the three restart NetworkManager automatically from package hooks.

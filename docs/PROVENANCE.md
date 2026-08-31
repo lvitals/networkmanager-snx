@@ -9,7 +9,7 @@ This project is licensed under the **MIT License**. The full license text is in 
 - SPDX identifier: `MIT`.
 - Copyright: `Copyright (C) 2026 Leandro Vital <leavitals@gmail.com>`.
 - Every file under `src/` and `gnome/` (including `gnome/tests/`) carries an `SPDX-License-Identifier: MIT` header with the same copyright line, so the license of any individual file is unambiguous without needing this document or the repository root.
-- `common/meson.build`, `gnome/meson.build`, `common/PKGBUILD`, `gnome/PKGBUILD`, and `plasma/PKGBUILD` all declare `MIT` as project metadata, matching the file-level headers and the `LICENSE` file.
+- `common/meson.build`, `gnome/meson.build`, `packaging/arch/common/PKGBUILD`, `packaging/arch/gnome/PKGBUILD`, and `packaging/arch/plasma/PKGBUILD` all declare `MIT` as project metadata, matching the file-level headers and the `LICENSE` file.
 
 ## Independence
 

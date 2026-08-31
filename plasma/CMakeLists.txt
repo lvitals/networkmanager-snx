@@ -5,7 +5,7 @@
 # The core NetworkManager SNX backend (nm-snx-service, the snx.name VPN type
 # registration, the D-Bus policy) lives in the common networkmanager-snx
 # package (../common/) and is a runtime dependency of this one -- see
-# ../common/meson.build and ../common/PKGBUILD. This plugin still compiles a
+# ../common/meson.build and ../packaging/arch/common/PKGBUILD. This plugin still compiles a
 # `snx-core` static library and the shared core tests directly from the
 # common src/ for its own test suite below, but does not install nm-snx-service
 # or snx.name itself, so it no longer conflicts with gnome/'s package.

@@ -149,16 +149,16 @@ sudo rm "$(qmake6 -query QT_INSTALL_PLUGINS)/plasma/network/vpn/plasmanetworkman
 
 ## Arch Package
 
-Three packages, each with its own `PKGBUILD` next to the code it packages, all cloning the full repository as `source`:
+Three packages, each with its own `PKGBUILD` under [`packaging/arch/`](../packaging/arch/), all cloning the full repository as `source`:
 
-- [`common/PKGBUILD`](../common/PKGBUILD) builds `networkmanager-snx` — the core backend, no desktop editor. Required.
-- [`gnome/PKGBUILD`](../gnome/PKGBUILD) builds `networkmanager-snx-gnome` — the GNOME GTK editor, depends on `networkmanager-snx`.
-- [`plasma/PKGBUILD`](../plasma/PKGBUILD) builds `networkmanager-snx-plasma` — the KDE Plasma editor, no GTK dependency, depends on `networkmanager-snx`.
+- [`packaging/arch/common/PKGBUILD`](../packaging/arch/common/PKGBUILD) builds `networkmanager-snx` — the core backend, no desktop editor. Required.
+- [`packaging/arch/gnome/PKGBUILD`](../packaging/arch/gnome/PKGBUILD) builds `networkmanager-snx-gnome` — the GNOME GTK editor, depends on `networkmanager-snx`.
+- [`packaging/arch/plasma/PKGBUILD`](../packaging/arch/plasma/PKGBUILD) builds `networkmanager-snx-plasma` — the KDE Plasma editor, no GTK dependency, depends on `networkmanager-snx`.
 
 ```sh
-cd common && makepkg -si    # core backend, required
-cd gnome && makepkg -si     # GNOME editor (optional)
-cd plasma && makepkg -si    # KDE Plasma editor (optional)
+cd packaging/arch/common && makepkg -si    # core backend, required
+cd packaging/arch/gnome && makepkg -si     # GNOME editor (optional)
+cd packaging/arch/plasma && makepkg -si    # KDE Plasma editor (optional)
 ```
 
 None of the three conflict with each other — `networkmanager-snx-gnome` and `networkmanager-snx-plasma` install only their own editor files and can both be installed at the same time on top of `networkmanager-snx`.
