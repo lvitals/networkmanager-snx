@@ -1,12 +1,4 @@
-# Maintainer: networkmanager-snx contributors
-#
-# KDE Plasma/Qt flavor. Builds only the plasma-nm editor plugin (no meson,
-# no GTK/libnma runtime dependency at all) -- the core NetworkManager SNX
-# backend (nm-snx-service, snx.name, D-Bus policy) lives in the common
-# networkmanager-snx package (../common/PKGBUILD), a runtime dependency of
-# this one. For GNOME instead, see ../gnome/PKGBUILD -- the two no longer
-# conflict, since neither installs the shared backend files; both can be
-# installed at the same time on top of networkmanager-snx.
+# Maintainer: Leandro V. Catarin <leavitals@gmail.com>
 
 pkgname=networkmanager-snx-plasma
 pkgver=0.1.0

@@ -13,4 +13,5 @@ local/
 packaging/arch/*/pkg/
 packaging/arch/*/src/
 packaging/arch/*/networkmanager-snx/
+packaging/arch/*/networkmanager-snx-*.tar.gz
 packaging/arch/*/*.pkg.tar.*

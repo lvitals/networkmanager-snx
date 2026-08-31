@@ -1,11 +1,4 @@
-# Maintainer: networkmanager-snx contributors
-#
-# GNOME/GTK flavor. Builds only the GTK NMVpnEditor plugin and auth dialog
-# (gnome/) on top of the core NetworkManager SNX backend, which lives in the
-# common networkmanager-snx package (../common/PKGBUILD) and is a runtime
-# dependency of this one. For KDE Plasma instead, see ../plasma/PKGBUILD -- the
-# two no longer conflict, since neither installs the shared backend files;
-# both can be installed at the same time on top of networkmanager-snx.
+# Maintainer: Leandro V. Catarin <leavitals@gmail.com>
 
 pkgname=networkmanager-snx-gnome
 pkgver=0.1.0

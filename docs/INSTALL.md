@@ -149,7 +149,7 @@ sudo rm "$(qmake6 -query QT_INSTALL_PLUGINS)/plasma/network/vpn/plasmanetworkman
 
 ## Arch Package
 
-Three packages, each with its own `PKGBUILD` under [`packaging/arch/`](../packaging/arch/), all cloning the full repository as `source`:
+Three packages, each with its own `PKGBUILD` under [`packaging/arch/`](../packaging/arch/), all downloading the `v0.1.0` release tarball as `source`:
 
 - [`packaging/arch/common/PKGBUILD`](../packaging/arch/common/PKGBUILD) builds `networkmanager-snx` — the core backend, no desktop editor. Required.
 - [`packaging/arch/gnome/PKGBUILD`](../packaging/arch/gnome/PKGBUILD) builds `networkmanager-snx-gnome` — the GNOME GTK editor, depends on `networkmanager-snx`.
