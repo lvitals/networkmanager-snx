@@ -1,14 +1,4 @@
-# Maintainer: networkmanager-snx contributors
-#
-# Common backend package. Builds and installs the core NetworkManager SNX
-# D-Bus service (nm-snx-service), the CLI discovery tool (nm-snx-discover),
-# the snx.name VPN type registration, and the D-Bus policy -- all shared by
-# both desktop flavors. No GTK or Qt/KF dependency at all: installing
-# this package alone is enough to make the "snx" VPN type work with
-# nmcli/nmtui. Install ../gnome/PKGBUILD (networkmanager-snx-gnome) and/or
-# ../plasma/PKGBUILD (networkmanager-snx-plasma) on top for a desktop editor --
-# both depend on this package and no longer conflict with each other, since
-# neither installs the backend files this package owns.
+# Maintainer: Leandro V. Catarin <leavitals@gmail.com>
 
 pkgname=networkmanager-snx
 pkgver=0.1.0
