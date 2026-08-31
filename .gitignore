@@ -8,3 +8,9 @@ local/
 *.so
 *.swp
 *~
+
+# makepkg build artifacts (packaging/arch/{common,gnome,plasma}/)
+packaging/arch/*/pkg/
+packaging/arch/*/src/
+packaging/arch/*/networkmanager-snx/
+packaging/arch/*/*.pkg.tar.*
