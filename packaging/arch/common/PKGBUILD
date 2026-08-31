@@ -18,18 +18,13 @@ arch=('x86_64')
 url='https://github.com/lvitals/networkmanager-snx'
 license=('MIT')
 depends=('glib2' 'networkmanager')
-makedepends=('git' 'meson' 'ninja' 'pkgconf')
+makedepends=('meson' 'ninja' 'pkgconf')
 checkdepends=('valgrind')
-source=('git+https://github.com/lvitals/networkmanager-snx.git')
-sha256sums=('SKIP')
-
-pkgver() {
-  cd networkmanager-snx
-  git describe --long --tags --always | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}
+source=("networkmanager-snx-$pkgver.tar.gz::https://github.com/lvitals/networkmanager-snx/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('6d883f8237cd5d8947a6d8c55705290dc136fa02d77f4d05dfd019724e6717e4')
 
 build() {
-  arch-meson networkmanager-snx/common build
+  arch-meson "networkmanager-snx-$pkgver/common" build
   meson compile -C build
 }
 
@@ -39,5 +34,5 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-  install -Dm644 networkmanager-snx/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "networkmanager-snx-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
